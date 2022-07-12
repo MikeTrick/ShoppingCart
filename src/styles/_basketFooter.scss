@@ -1,0 +1,13 @@
+.basket-footer-wrapper {
+
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(94, 162, 168, 0.76);
+  border-radius: 0 0 10px 10px;
+  color: white;
+  padding: 8px;
+
+  &_item {
+    padding: 10px;
+  }
+}

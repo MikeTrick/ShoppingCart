@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+
+  input {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  button {
+    width: 250px;
+    height: 45px;
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 25px;
+
+  }
+}

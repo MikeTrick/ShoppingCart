@@ -1,0 +1,16 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-color: #a3c4c7;
+  border-radius: 20px;
+  border:6px double #667185;
+  
+  button {
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
