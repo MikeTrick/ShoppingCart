@@ -5,3 +5,4 @@ export const INITIAL_APP_STATE = {
 export const INITIAL_PRODUCTS_STATE = {
     products: [],
 }
+

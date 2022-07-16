@@ -10,7 +10,7 @@ export const Header = () => {
     const {discount} = useSelector(getAppState);
     const {setDiscount} = useActions(appActions);
 
-    const [discountValue, setDiscountValue] = useState(0);
+    const [discountValue, setDiscountValue] = useState(discount);
 
     useEffect(() => setDiscountValue(discount), [discount])
 

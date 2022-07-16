@@ -1,22 +1,22 @@
-import React, {useState} from "react";
-import {BasketCard} from "../BasketCard/basketCard";
+import React from "react";
+import {useSelector} from "react-redux";
+import {getProductState} from "../../redux/initial/selectors";
 
 
 export const BasketFooter = () => {
-   const itemsSum = 0;
-   const priceSum = 0;
 
-    return(
+    const {totalSum, productsCount} = useSelector(getProductState)
+
+    return (
         <div className='basket-footer-wrapper'>
             <div className='basket-footer-wrapper__item'>
-                количество товаров
+                количество товаров: {productsCount}
             </div>
             <div className='basket-footer-wrapper__item'>
-                сумма стоимости всех товаров
+                сумма стоимости всех товаров : {totalSum}
             </div>
         </div>
     )
-
 
 
 }

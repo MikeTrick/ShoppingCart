@@ -1,6 +1,14 @@
 import React from "react";
+import {useActions} from "../../hooks";
+import {productActions} from "../../redux/actions/ProductActions";
+import {useSelector} from "react-redux";
+import {getAppState} from "../../redux/initial/selectors";
 
-export const BasketCard = ({ count, name, price, id }) => {
+export const BasketCard = ({count, name, price, id, discountPrice}) => {
+
+    const {discount} = useSelector(getAppState)
+
+    const {deleteFromBasket} = useActions(productActions)
 
     return (
         <div className='card-wrapper'>
@@ -8,15 +16,14 @@ export const BasketCard = ({ count, name, price, id }) => {
                 Количество: {count}
             </div>
             <div className='card-wrapper__item'>
-               Название: {name}
+                Название: {name}
             </div>
             <div className='card-wrapper__item'>
-                Стоимость: {price} руб.
+                Стоимость: {discount === 0 ? price : discountPrice} руб.
             </div>
             <div className='card-wrapper__item'>
-                <button>удалить</button>
+                <button onClick={() => deleteFromBasket(id)}>удалить</button>
             </div>
-
         </div>
     )
 

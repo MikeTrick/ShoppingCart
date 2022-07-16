@@ -5,8 +5,14 @@ export const productsReducer = (state = INITIAL_PRODUCTS_STATE, {type, payload})
         case 'ADD_TO_BASKET': {
             return ({
                 ...state,
-                products: [...state.products, payload]
+                products: [...state.products, {...payload, discountPrice: payload.price} ]
             })
+        }
+        case 'DELETE_FROM_BASKET': {
+            return ({
+                ...state,
+                products: state.products.filter(({id}) => id !== payload)
+        })
         }
         default:
             return state;

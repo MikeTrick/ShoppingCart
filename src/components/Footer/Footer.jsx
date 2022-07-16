@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
 import {Button} from "../../ui/Button";
 import {useActions} from "../../hooks";
 import {productActions} from "../../redux/actions/ProductActions";
@@ -15,6 +15,8 @@ export const Footer = () => {
     const {
         addToBasket,
     } = useActions(productActions)
+
+    debugger
 
     const {productsCount} = useSelector(getProductState)
 
